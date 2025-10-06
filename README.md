@@ -26,12 +26,18 @@ ts# - Numbered original time series
 
 ts#_detrended - Numbered original time series that have been detrended
 
+
+
 Key (python) commands:
 
 import numpy as np
+
 from scipy import stats
+
 from scipy.io import loadmat
 
 loadmat(filename)[variable_name][0]                                # Load in variable_name data
+
 np.var(x1_detrended_window)                                        # Calculate variance over a window of detrended data
+
 AR1, _ = stats.pearsonr(x1_detrended_window1,x1_detrended_window2) # Calculate pearson correlation (autocorrelation) between 2 windows of detrended data. For lag-1 autocorrelation these windows should overlap and be  separated by only 1 time step.  
